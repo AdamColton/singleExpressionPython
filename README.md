@@ -25,3 +25,17 @@ But if they don't we can force Python to be lazy with logical operators
 ```python
 x = [conditional or ifFalse(),conditional and ifTrue()][conditional]
 ```
+
+# Looping
+It would be possible to use a for a while loop and keep everything on a single line, but it would be cheating - we would be using multiple statments at that point. What we can use instead in many cases is list comprehensions.
+
+```python
+"\n".join([i for i in range(10)])
+```
+
+## Lambda Recursion
+We can also perform some very complex looping using recursion and lambdas. Unfortunaly, this gets a little complex
+
+```python
+factorial10 = (lambda r: r(10,r))(lambda x,r: [(x<2) or x*r(x-1,r),(x<2) and 1][x<2])
+```
